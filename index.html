@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Websocket sample</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Hello world!</h1>
+    <p id="content"></p>
+    <script type="module">
+    import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
+    const socket = io.connect();
+    const content = document.getElementById('content');
+    socket.on('connect', () => {
+      console.log('connected.');
+    });
+    socket.on('updateConfig', (config) => {
+      content.innerHTML = `palette = ${config.palette}`;
+    });
+    </script>
+  </body>
+</html>
