@@ -3,6 +3,7 @@
   <head>
     <title>Websocket sample - admin</title>
     <meta charset="utf-8" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
   </head>
   <body>
     <h1>Admin</h1>
@@ -10,9 +11,9 @@
       <input type="text" name="palette" id="palette" />
       <input type="submit" value="send" />
     </form>
-    <script type="module">
-    import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
-    const socket = io.connect();
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+    const socket = io();
     const fConfig = document.forms['config'];
     const ePalette = fConfig.elements['palette'];
     fConfig.onsubmit = () => {
