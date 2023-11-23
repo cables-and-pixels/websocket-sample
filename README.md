@@ -1,6 +1,9 @@
 Websocket sample
 ================
 
+Install node:
+https://nodejs.org/en/download/
+
 Install dependencies and run server:
 ```
 npm install
